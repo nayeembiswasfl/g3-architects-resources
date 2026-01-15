@@ -103,6 +103,7 @@ main {
     font-weight: 500;
 }
 
+
 /* some facts related  */
 .facts-container {
     display: grid;
@@ -117,6 +118,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
+    
 }
 
 .fact-number {
@@ -136,26 +138,106 @@ main {
 .fact-description {
     max-width: 540px;
 }
-/* responsive media query */
-@media screen and (max-width:576px) {
-    .navbar,.nav-links,.teams {
-        flex-direction: column;
-    }
-    .team-img-container {
-        grid-template-columns: repeat(1,1fr);
-    }
-    .our-features {
-         margin-left: 22px;
-    }
+
+/* sponsor related style */
+
+.sponsor-info {
+    max-width: 540px;
+    margin: 50px auto;
+    text-align: center;
+}
+.logo-container {
+    justify-content: space-between;
+}
+
+.sponsors-logo img {
+     filter: grayscale(100%);
 }
 
 
-/* medium size device */
-@media screen and (min-width: 576px) and (max-width:992px) {
+/* responsive media query for small devices */
+@media screen and (max-width: 576px) {
+    /* Navbar stacking */
+    .navbar, .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-items {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Banner adjustments */
+    .banner-content {
+        padding: 0 16px;
+        margin-bottom: 30px;
+    }
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    /* Teams section stacking */
     .teams {
         flex-direction: column;
+        align-items: center;
+    }
+    .team-img-container  {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 16px;
+    }
+    .our-features {
+         margin-left: 0;
+         text-align: center;
+         padding: 0 16px;
+         max-width: 100%;
+    }
+
+    /* Facts section stacking */
+    .facts-container{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 24px;
+    }
+    .fact-card { 
+        margin-left: 0;
+        width: 80%;
+        max-width: 240px;
+    }
+
+    /* Sponsors logos stacking */
+    .logo-container {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+}
+
+/* medium size device adjustments */
+@media screen and (min-width: 576px) and (max-width:992px) {
+    /* Teams section stacking */
+    .teams {
+        flex-direction: column;
+        align-items: center;
+    }
+    .team-img-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        justify-items: center;
     }
     .our-features {
         text-align: center;
+        margin-left: 0;
+    }
+
+    /* Facts section adjustment */
+    .facts-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        justify-items: center;
+    }
+
+    /* Banner adjustment */
+    .banner-title {
+        font-size: 3rem;
     }
 }
